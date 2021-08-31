@@ -84,12 +84,6 @@ const myQuestions = [
 
 
 
-//  const questionContainerElem = document.getElementById('questions-container')
-//   const correctButton = document.getElementById('Correct-btn') 
-//   const nextButton = document.getElementById('next-btn') 
-//   const startButton = document.querySelector('#start-btn')
-//   const questionElem = document.getElementById('question')
-//   const answerButtonsElement = document.getElementById('answer-buttons')
 
 const startButton = document.getElementById('start-btn')
 const nextButton = document.getElementById('next-btn')
@@ -157,16 +151,7 @@ function setNextQuestion() {
 
 function showQuestion(question) {
   questionElement.innerText = question.question
-  question.answers.forEach(answer => {
-    const btn = document.createElement('button')
-    btn.innerText = answer.text
-    btn.classList.add('btn')
-    if (answer.correct === true) {
-      btn.dataset.correct = answer.correct
-    }
-    btn.addEventListener('click', selectAnswer)
-    answerButtonsElement.appendChild(btn)
-  })
+  
 }
 
 function resetState() {
