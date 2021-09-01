@@ -7,8 +7,10 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background: url('https://wallpapercave.com/wp/VSx6fFa.jpg') no-repeat center fixed;
+    background: url('https://wallpapercave.com/wp/zLeVJhN.jpg') no-repeat center fixed;
     background-size: cover;
+    font-family: 'Architects Daughter', sans-serif;
+    font-size: 2rem;
   }
   
 
@@ -16,7 +18,7 @@
   .container {
     width: 800px;
     max-width: 80%;
-    background-color: rgb(228, 216, 220);
+    background-color: rgb(185, 122, 149);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
@@ -31,13 +33,19 @@
   
   .btn {
     border: 1px solid ;
-    background-color: rgb(147, 181, 198);
+    background-color: rgb(113, 111, 129);
     border-radius: 5px;
     padding: 5px 10px;
     color: white;
     outline: none;
+    font-family: 'Architects Daughter', sans-serif
   }
-  
+  .btn.wrong{
+      color: rgb(255, 0, 0);
+  }
+  .btn.correct{
+      color: rgb(0,255, 0);
+  }
   .btn:hover {
     border-color: black;
   }

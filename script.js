@@ -1,6 +1,3 @@
-let IMAGES = {
-    
-}
 
 const myQuestions = [
     {
@@ -9,83 +6,83 @@ const myQuestions = [
       
       {text: 'Phoebe', correct: true},
       {optionB: 'Rachel', correct: false} 
-    
-      ]
+      ],
+    //   questionImg: url('https://wallpapercave.com/wp/vhrSNuJ.jpg')
     },
     {
       question: 'How many times has Ross been married?',
       answers:[
           {text:'4', correct:false},
           {text:'3', correct: true}
-      ]
+      ],
+    //   questionImg: url('https://wallpapercave.com/wp/CpFhoGU.jpg')
     },
     {
       question: 'Who got their own spinoff?',
       answers: [ 
       {text: 'Chandler', correct: false}, 
       {text: 'Joey', correct: true}
-     
-      ]
+      ],
+    //   questionImg: url('https://wallpapercave.com/wp/aQtbJ1A.jpg')
     },
     {
       question: 'What’s Phoebe’s sister’s name?', 
       answers: [
       {text: 'Ariel', correct: false},
       {text: 'Ursula', correct: true} 
-      
-      
-      ]
+      ],
+    //   questionImg: url('https://wallpapercave.com/wp/zLeVJhN.jpg')
     }, 
     {
         question: 'What is Joey’s fake name?',
         answers: [ 
         {text: 'Mike Hanningan', correct: false}, 
         {text:  'Ken Adams', correct: true}
-        
-        ]
+        ],
+        // questionImg: url('https://wallpapercave.com/wp/wp2590155.jpg')
       }, 
       {
         question: 'What was the name of the millionaire Monica dated?',
         answers: [ 
         {text:  'Pete', correct: true}, 
         {text:  'John', correct: false} 
-       
-        ]
+        ],
+        // questionImg: url('https://wallpapercave.com/wp/VSx6fFa.jpg')
       }, 
       {
         question: 'Who got stuck in a pair of leather pants',
         answers:[ 
         {text: 'Joey', correct: false}, 
         {text: 'Ross', correct: true}  
-        ]
+        ],
+        // questionImg: url('https://wallpapercave.com/wp/bbqH0Hd.jpg')
       }, 
       {
         question: 'Who sang the "Friends" theme song?',
         answers: [ 
         {text: 'The Academy', correct: false},  
         {text: 'The Rembrandts', correct: true}
-       
-        ]
+        ],
+        // questionImg: url('https://buzzfrag.com/wp-content/uploads/2018/05/maxresdefault-3.jpg')
       }, 
       {
         question: 'Who hates Thanksgiving?',
         answers: [ 
         {text:  'Chandler', correct: true},
         {text:  'Ross', correct: false}  
-       
-        ]
+        ],
+        // questionImg: url('https://i.pinimg.com/originals/78/ce/fc/78cefc77b896fd1de3134aa8c33032f2.jpg')
       }, 
       {
         question: 'Who was the maid of honor at Monica’s wedding?',
         answers: [
         {text:   'Rachel', correct: true}, 
         {text:   'Phoebe', correct: false}
-
-        ]
+        ],
+        // questionImg: url('http://images6.fanpop.com/image/photos/40500000/friends-the-last-one-fwrzin-40532406-717-478.jpg')
 
       }
   ]
-
 
 
 
@@ -100,6 +97,7 @@ const answerButtonsElement = document.getElementById('answer-buttons')
 
   
 let currentQuestionIndex;
+let score;
 
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
@@ -128,6 +126,8 @@ function setNextQuestion() {
 
 function showQuestion(question) {
     questionElement.innerText = question.question
+    // let Img = myQuestions.imgQuestion;
+    // document.body.style.backgroundImage = Img;
     question.answers.forEach(answer => {
       const button = document.createElement('button')
       button.innerText = answer.text
@@ -138,6 +138,7 @@ function showQuestion(question) {
       button.addEventListener('click', selectAnswer)
       answerButtonsElement.appendChild(button)
     })
+  
   }
 
 function resetState() {
@@ -152,7 +153,7 @@ function resetState() {
 function selectAnswer(e) {
     const selectedButton = e.target
     const correct = selectedButton.dataset.correct
-    setStatusClass(document.body, correct)
+    
     Array.from(answerButtonsElement.children).forEach(button => {
       setStatusClass(button, button.dataset.correct)
     })
@@ -165,7 +166,7 @@ function selectAnswer(e) {
   }
   
   function setStatusClass(element, correct) {
-    clearStatusClass(element)
+    
     if (correct) {
       element.classList.add('correct')
     } else {
@@ -179,8 +180,17 @@ function selectAnswer(e) {
   }
 
 
-
-
+//   function checkForAnswer() {
+//     const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
+//     const currentQuestionAnswer = currentQuestion.correctAnswer
+//     answers.forEach((answer) => {
+//         if (answer.value === currentQuestionAnswer) {
+            
+//             correctOption = option.labels[0].id
+//         }
+//     })
+// }
+  
 
 
 
